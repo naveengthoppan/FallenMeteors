@@ -56,15 +56,55 @@
 		FE25A29F26A3158B00111D37 /* Fallen Meteors */ = {
 			isa = PBXGroup;
 			children = (
-				FE25A2A026A3158B00111D37 /* AppDelegate.swift */,
-				FE25A2A226A3158B00111D37 /* SceneDelegate.swift */,
-				FE25A2A426A3158B00111D37 /* ViewController.swift */,
-				FE25A2A626A3158B00111D37 /* Main.storyboard */,
-				FE25A2A926A3158C00111D37 /* Assets.xcassets */,
-				FE25A2AB26A3158C00111D37 /* LaunchScreen.storyboard */,
-				FE25A2AE26A3158C00111D37 /* Info.plist */,
+				FE25A2B826A315F700111D37 /* Supporting Files */,
+				FE25A2B726A315ED00111D37 /* Resources */,
+				FE25A2B626A315DC00111D37 /* View Controllers */,
+				FE25A2B526A315BC00111D37 /* Storyboards */,
+				FE25A2B426A3159300111D37 /* Application Delegate */,
 			);
 			path = "Fallen Meteors";
+			sourceTree = "<group>";
+		};
+		FE25A2B426A3159300111D37 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FE25A2A026A3158B00111D37 /* AppDelegate.swift */,
+				FE25A2A226A3158B00111D37 /* SceneDelegate.swift */,
+			);
+			path = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		FE25A2B526A315BC00111D37 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FE25A2A626A3158B00111D37 /* Main.storyboard */,
+				FE25A2AB26A3158C00111D37 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FE25A2B626A315DC00111D37 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE25A2A426A3158B00111D37 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FE25A2B726A315ED00111D37 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FE25A2A926A3158C00111D37 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FE25A2B826A315F700111D37 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE25A2AE26A3158C00111D37 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
