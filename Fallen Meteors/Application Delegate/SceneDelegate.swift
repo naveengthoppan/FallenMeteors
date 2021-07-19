@@ -17,6 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+                
+        guard let meteorListViewController = window?.rootViewController as? MeteorListViewController else {
+            fatalError("Unexpected Root View Controller")
+        }
+        
+        let meteorListViewModel = MeteorListViewModel()
+        
+        meteorListViewController.viewModel = meteorListViewModel
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
