@@ -70,7 +70,11 @@ class MeteorListViewController: UIViewController {
     
     @objc func refresh(_ sender: AnyObject) {
        // Code to refresh table view
-        viewModel?.refreshData()
+        if favouriteSwitch.isOn {
+            viewModel?.fetchFavouriteMeteors()
+        } else {
+            viewModel?.refreshData()
+        }
     }
     
     private func presentAlert(of alertType: AlertType) {
