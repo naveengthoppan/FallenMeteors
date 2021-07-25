@@ -3,23 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE0F849726AD67BB001191C3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F849626AD67BB001191C3 /* CoreDataManager.swift */; };
+		FE0F849926AD6B27001191C3 /* MeteorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F849826AD6B27001191C3 /* MeteorViewModel.swift */; };
 		FE25A2A126A3158B00111D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE25A2A026A3158B00111D37 /* AppDelegate.swift */; };
 		FE25A2A326A3158B00111D37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE25A2A226A3158B00111D37 /* SceneDelegate.swift */; };
 		FE25A2A826A3158B00111D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE25A2A626A3158B00111D37 /* Main.storyboard */; };
 		FE25A2AA26A3158C00111D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE25A2A926A3158C00111D37 /* Assets.xcassets */; };
 		FE25A2AD26A3158C00111D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE25A2AB26A3158C00111D37 /* LaunchScreen.storyboard */; };
 		FE25A2BA26A3173800111D37 /* MeteorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE25A2B926A3173800111D37 /* MeteorListViewController.swift */; };
+		FE26813D26A9F53B00439D0F /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = FE26813C26A9F53B00439D0F /* MBProgressHUD */; };
+		FE26813F26AAE3B500439D0F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26813E26AAE3B500439D0F /* Date+Extension.swift */; };
 		FE298FA826A4234200C94D4E /* MeteorRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE298FA726A4234200C94D4E /* MeteorRequest.swift */; };
 		FE298FAB26A426B500C94D4E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE298FAA26A426B500C94D4E /* Configuration.swift */; };
 		FE298FAE26A4286800C94D4E /* MeteorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE298FAD26A4286800C94D4E /* MeteorListViewModel.swift */; };
 		FE298FB126A42C6B00C94D4E /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE298FB026A42C6B00C94D4E /* Meteor.swift */; };
+		FE50076B26A60A68001BC129 /* MeteorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50076A26A60A68001BC129 /* MeteorCell.swift */; };
+		FE50077126A8BB14001BC129 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50077026A8BB14001BC129 /* String+Extension.swift */; };
+		FEFB965026AC95AF00D49983 /* MeteorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB964F26AC95AF00D49983 /* MeteorDetailViewController.swift */; };
+		FEFB965226AC95FA00D49983 /* MeteorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB965126AC95FA00D49983 /* MeteorDetailViewModel.swift */; };
+		FEFB965626AD5C8D00D49983 /* MeteorData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEFB965426AD5C8D00D49983 /* MeteorData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE0F849626AD67BB001191C3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FE0F849826AD6B27001191C3 /* MeteorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorViewModel.swift; sourceTree = "<group>"; };
 		FE25A29D26A3158B00111D37 /* Fallen Meteors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fallen Meteors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE25A2A026A3158B00111D37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE25A2A226A3158B00111D37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,10 +39,16 @@
 		FE25A2AC26A3158C00111D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE25A2AE26A3158C00111D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE25A2B926A3173800111D37 /* MeteorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorListViewController.swift; sourceTree = "<group>"; };
+		FE26813E26AAE3B500439D0F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+Extension.swift"; path = "../../../../../Date+Extension.swift"; sourceTree = "<group>"; };
 		FE298FA726A4234200C94D4E /* MeteorRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorRequest.swift; sourceTree = "<group>"; };
 		FE298FAA26A426B500C94D4E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		FE298FAD26A4286800C94D4E /* MeteorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorListViewModel.swift; sourceTree = "<group>"; };
 		FE298FB026A42C6B00C94D4E /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
+		FE50076A26A60A68001BC129 /* MeteorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorCell.swift; sourceTree = "<group>"; };
+		FE50077026A8BB14001BC129 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "../../../../../String+Extension.swift"; sourceTree = "<group>"; };
+		FEFB964F26AC95AF00D49983 /* MeteorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorDetailViewController.swift; sourceTree = "<group>"; };
+		FEFB965126AC95FA00D49983 /* MeteorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeteorDetailViewModel.swift; path = ../../../../../MeteorDetailViewModel.swift; sourceTree = "<group>"; };
+		FEFB965526AD5C8D00D49983 /* MeteorData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeteorData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE26813D26A9F53B00439D0F /* MBProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +82,9 @@
 		FE25A29F26A3158B00111D37 /* Fallen Meteors */ = {
 			isa = PBXGroup;
 			children = (
+				FEFB965326AD5C7800D49983 /* Core Data */,
+				FE50076F26A8BAF6001BC129 /* Extensions */,
+				FE50076C26A60A6E001BC129 /* Views */,
 				FE298FAF26A42C5F00C94D4E /* Models */,
 				FE298FAC26A4284D00C94D4E /* View Models */,
 				FE298FA926A426A300C94D4E /* Configuration */,
@@ -99,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				FE25A2B926A3173800111D37 /* MeteorListViewController.swift */,
+				FEFB964F26AC95AF00D49983 /* MeteorDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -139,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				FE298FAD26A4286800C94D4E /* MeteorListViewModel.swift */,
+				FEFB965126AC95FA00D49983 /* MeteorDetailViewModel.swift */,
+				FE0F849826AD6B27001191C3 /* MeteorViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -149,6 +173,32 @@
 				FE298FB026A42C6B00C94D4E /* Meteor.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FE50076C26A60A6E001BC129 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE50076A26A60A68001BC129 /* MeteorCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FE50076F26A8BAF6001BC129 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FE50077026A8BB14001BC129 /* String+Extension.swift */,
+				FE26813E26AAE3B500439D0F /* Date+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FEFB965326AD5C7800D49983 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				FEFB965426AD5C8D00D49983 /* MeteorData.xcdatamodeld */,
+				FE0F849626AD67BB001191C3 /* CoreDataManager.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +217,9 @@
 			dependencies = (
 			);
 			name = "Fallen Meteors";
+			packageProductDependencies = (
+				FE26813C26A9F53B00439D0F /* MBProgressHUD */,
+			);
 			productName = "Fallen Meteors";
 			productReference = FE25A29D26A3158B00111D37 /* Fallen Meteors.app */;
 			productType = "com.apple.product-type.application";
@@ -194,6 +247,9 @@
 				Base,
 			);
 			mainGroup = FE25A29426A3158B00111D37;
+			packageReferences = (
+				FE26813B26A9F53B00439D0F /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+			);
 			productRefGroup = FE25A29E26A3158B00111D37 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -221,13 +277,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEFB965626AD5C8D00D49983 /* MeteorData.xcdatamodeld in Sources */,
 				FE298FAE26A4286800C94D4E /* MeteorListViewModel.swift in Sources */,
+				FEFB965226AC95FA00D49983 /* MeteorDetailViewModel.swift in Sources */,
+				FE50077126A8BB14001BC129 /* String+Extension.swift in Sources */,
 				FE298FB126A42C6B00C94D4E /* Meteor.swift in Sources */,
 				FE25A2BA26A3173800111D37 /* MeteorListViewController.swift in Sources */,
 				FE298FAB26A426B500C94D4E /* Configuration.swift in Sources */,
+				FEFB965026AC95AF00D49983 /* MeteorDetailViewController.swift in Sources */,
+				FE26813F26AAE3B500439D0F /* Date+Extension.swift in Sources */,
 				FE25A2A126A3158B00111D37 /* AppDelegate.swift in Sources */,
+				FE0F849926AD6B27001191C3 /* MeteorViewModel.swift in Sources */,
 				FE25A2A326A3158B00111D37 /* SceneDelegate.swift in Sources */,
 				FE298FA826A4234200C94D4E /* MeteorRequest.swift in Sources */,
+				FE0F849726AD67BB001191C3 /* CoreDataManager.swift in Sources */,
+				FE50076B26A60A68001BC129 /* MeteorCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +493,39 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FE26813B26A9F53B00439D0F /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FE26813C26A9F53B00439D0F /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE26813B26A9F53B00439D0F /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FEFB965426AD5C8D00D49983 /* MeteorData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FEFB965526AD5C8D00D49983 /* MeteorData.xcdatamodel */,
+			);
+			currentVersion = FEFB965526AD5C8D00D49983 /* MeteorData.xcdatamodel */;
+			name = MeteorData.xcdatamodeld;
+			path = ../../../../../MeteorData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FE25A29526A3158B00111D37 /* Project object */;
 }

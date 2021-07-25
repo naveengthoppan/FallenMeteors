@@ -12,14 +12,14 @@ class MeteorListViewModel {
             case noMeteorDataAvailable
     }
     
-    
-    typealias DidFetchMeteorDataCompletion = ([Meteor]?, MeteorDataError?) -> Void
+    typealias DidFetchMeteorDataCompletion = ([MeteorViewModel]?, MeteorDataError?) -> Void
     
     // MARK: - Properties
 
     var didFetchMeteorData: DidFetchMeteorDataCompletion?
-    var meteorList = [Meteor]()
-    
+    var meteorList: [MeteorViewModel]?
+    var sortedMeteorList = [MeteorViewModel]()
+    var favouriteMeteors = [MeteorViewModel]()
     // MARK: - Initialization
     init() {
         fetchMeteorData()
@@ -30,13 +30,6 @@ class MeteorListViewModel {
       
         let meteorRequest = MeteorRequest(baseUrl: MeteorService.baseUrl)
         URLSession.shared.dataTask(with: meteorRequest.url) { [weak self] (data, response, error) in
-            //                if let data = data {
-            //                    print("--------GET REQUEST RESPONSE START--------")
-            //                    print("CODE: \((response as? HTTPURLResponse)?.statusCode ?? 0)")
-            //                    print("Response Data:")
-            //                    print(String(data: data, encoding: .utf8) ?? "")
-            //                    print("--------GET REQUEST RESPONSE END--------")
-            //                }
             if let response = response as? HTTPURLResponse {
                 print("Status Code: \(response.statusCode)")
             }
@@ -52,8 +45,9 @@ class MeteorListViewModel {
                     let meteorResposne = try decoder.decode([Meteor].self, from: data)
                     
                     // Invoke Completion Handler
-                    self?.didFetchMeteorData?(meteorResposne, nil)
-                    self?.meteorList = meteorResposne
+                        self?.meteorList = MeteorResults(meteors: meteorResposne).results
+                    self?.didFetchMeteorData?(MeteorResults(meteors: meteorResposne).results, nil)
+                    
                 } catch {
                     print("Unable to Decode JSON Response \(error)")
                     
@@ -67,4 +61,46 @@ class MeteorListViewModel {
         
     }
     
+    func fetchFavouriteMeteors() {
+        // Create Fetch Request
+        favouriteMeteors = CoreDataManager(modelName: "MeteorData").fetchFavouriteMeteors()
+        self.didFetchMeteorData?(favouriteMeteors, nil)
+    }
+    
+    func removeFavouriteMeteors(indexPath: IndexPath) {
+        // Create Fetch Request
+       CoreDataManager(modelName: "MeteorData").removeMeteorFromFavourites(meteor: favouriteMeteors[indexPath.row])
+                                                                                            
+    }
+    
+    func sortByDate() {
+        meteorList = meteorList!.sorted(by: {$0.year!.compare($1.year!) == .orderedAscending})
+        self.didFetchMeteorData?(meteorList, nil)
+    }
+    
+    func sortBySize() {
+        meteorList = meteorList!.sorted(by: {$0.mass ?? 0 < $1.mass ?? 0})
+        self.didFetchMeteorData?(meteorList, nil)
+    }
+    
+    func sortByName() {
+        meteorList = meteorList!.sorted(by: { $0.name! < $1.name!})
+        self.didFetchMeteorData?(meteorList, nil)
+    }
+    
+    func reverseList() {
+        meteorList = meteorList!.reversed()
+        self.didFetchMeteorData?(meteorList, nil)
+    }
+    
+    func refreshData() {
+        fetchMeteorData()
+    }
+    
+    func detailViewModel(indexPath: IndexPath, isFavourite: Bool) -> MeteorDetailViewModel {
+        if isFavourite {
+            return MeteorDetailViewModel(meteor: (favouriteMeteors[indexPath.row]))
+        }
+        return MeteorDetailViewModel(meteor: (meteorList?[indexPath.row])!)
+    }
 }

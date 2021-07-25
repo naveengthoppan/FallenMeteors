@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import MBProgressHUD
+
 
 class MeteorListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var favouriteSwitch: UISwitch!
     
     private enum AlertType {
         case noMetoerDataAvailable
+        case noFavouritesAvailable
     }
-    
+    let refreshControl = UIRefreshControl()
     var viewModel: MeteorListViewModel? {
         didSet {
             guard let viewModel = viewModel else {
@@ -29,8 +33,17 @@ class MeteorListViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+           tableView.addSubview(refreshControl)
         print(viewModel ?? "No View Model Injected")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.fetchFavouriteMeteors()
+        tableView.reloadData()
     }
     
     private func setupViewModel(with viewModel: MeteorListViewModel) {
@@ -39,15 +52,25 @@ class MeteorListViewController: UIViewController {
             if error != nil {
                 self?.presentAlert(of: .noMetoerDataAvailable)
             } else if let data = data {
-                print(data)
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
+                if data.count > 0 {
+                    DispatchQueue.main.async {
+                        MBProgressHUD.hide(for: (self?.view)!, animated: true)
+                        if ((self?.refreshControl.isRefreshing) != nil) {
+                            self?.refreshControl.endRefreshing()
+                        }
+                        self?.tableView.reloadData()
+                    }
                 }
                 
             } else {
                 self?.presentAlert(of: .noMetoerDataAvailable)
             }
         }
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+       // Code to refresh table view
+        viewModel?.refreshData()
     }
     
     private func presentAlert(of alertType: AlertType) {
@@ -59,6 +82,9 @@ class MeteorListViewController: UIViewController {
         case .noMetoerDataAvailable:
             title = "Unable to Fetch Meteor Data"
             message = "The application is unable to fetch meteor data. Please make sure your device is connected over Wi-Fi or cellular."
+        case .noFavouritesAvailable:
+            title = "No meteors favourited"
+            message = ""
         }
 
         DispatchQueue.main.async {
@@ -70,28 +96,120 @@ class MeteorListViewController: UIViewController {
             alertController.addAction(cancelAction)
 
             // Present Alert Controller
-            self.present(alertController, animated: true)
+            self.present(alertController, animated: true) { [self] in
+                if self.favouriteSwitch.isOn {
+                    favouriteSwitch.setOn(false, animated: true)
+                }
+            }
         }
       
     }
     
+    @IBAction func sortAction(_ sender: Any) {
+        let alert = UIAlertController(title: "Sort", message: "Please select an option to sort the meteors", preferredStyle: .actionSheet)
+            
+            alert.addAction(UIAlertAction(title: "Date", style: .default , handler:{ (UIAlertAction)in
+                print("User click date button")
+                DispatchQueue.main.async {
+                    MBProgressHUD.showAdded(to: self.view, animated: true)
+                }
+                
+                self.viewModel?.sortByDate()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Size", style: .default , handler:{ (UIAlertAction)in
+                print("User click size button")
+                MBProgressHUD.showAdded(to: self.view, animated: true)
+                self.viewModel?.sortBySize()
+            }))
+
+            alert.addAction(UIAlertAction(title: "Location", style: .default , handler:{ (UIAlertAction)in
+                MBProgressHUD.showAdded(to: self.view, animated: true)
+                self.viewModel?.sortByName()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+                print("User click Dismiss button")
+            }))
+
+            
+            //uncomment for iPad Support
+            //alert.popoverPresentationController?.sourceView = self.view
+
+            self.present(alert, animated: true, completion: {
+                print("completion block")
+            })
+    }
+    @IBAction func reverseAction(_ sender: Any) {
+        viewModel?.reverseList()
+    }
+    @IBAction func favouritesSwitchAction(_ sender: UISwitch) {
+        if sender.isOn {
+            viewModel?.fetchFavouriteMeteors()
+            if viewModel?.favouriteMeteors.count == 0 {
+                presentAlert(of: .noFavouritesAvailable)
+            }
+        } else {
+            viewModel?.refreshData()
+        }
+    }
 }
 
 extension MeteorListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.meteorList.count ?? 0
+        if favouriteSwitch.isOn {
+            return viewModel?.favouriteMeteors.count ?? 0
+        }
+        return viewModel?.meteorList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 73
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "meteorCell") {
-            cell.textLabel?.text = viewModel?.meteorList[indexPath.row].name
-            cell.detailTextLabel?.text = viewModel?.meteorList[indexPath.row].mass
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MeteorCell") as? MeteorCell {
+            let meteorData = favouriteSwitch.isOn ? viewModel?.favouriteMeteors[indexPath.row] : viewModel?.meteorList?[indexPath.row]
+            cell.titleLabel?.text = meteorData?.name
+            if let massValue =  meteorData?.mass, massValue >= 0 {
+                
+                cell.massLabel.text = "\(Int(massValue)) g"
+            } else {
+                cell.massLabel.text = "Not available"
+            }
+            if let year = meteorData?.year?.toString() {
+                cell.yearLabel?.text = year
+            }
+            
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let detailVC = self.storyboard?.instantiateViewController(identifier: "MeteorDetailViewController") as? MeteorDetailViewController {
+            if let detailsViewModel = viewModel?.detailViewModel(indexPath: indexPath, isFavourite: favouriteSwitch.isOn) {
+                detailVC.viewModel = detailsViewModel
+                self.navigationController?.pushViewController(detailVC, animated: true)
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return favouriteSwitch.isOn
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+            viewModel?.removeFavouriteMeteors(indexPath: indexPath)
+            viewModel?.favouriteMeteors.remove(at: indexPath.row)
+            if self.favouriteSwitch.isOn {
+                if viewModel?.favouriteMeteors.count == 0 {
+                    viewModel?.refreshData()
+                }
+            }
+            tableView.reloadData()
+        }
     }
 }

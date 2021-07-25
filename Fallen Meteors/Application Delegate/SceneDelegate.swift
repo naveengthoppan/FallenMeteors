@@ -18,13 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
                 
-        guard let meteorListViewController = window?.rootViewController as? MeteorListViewController else {
+        guard let navigationController = window?.rootViewController as? UINavigationController else {
             fatalError("Unexpected Root View Controller")
         }
-        
+        guard let meteorListVC = navigationController.viewControllers.first as? MeteorListViewController else {
+            fatalError("Unexpected Root View Controller")
+        }
         let meteorListViewModel = MeteorListViewModel()
         
-        meteorListViewController.viewModel = meteorListViewModel
+        meteorListVC.viewModel = meteorListViewModel
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
