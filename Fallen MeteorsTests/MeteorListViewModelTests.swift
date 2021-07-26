@@ -30,7 +30,7 @@ class MeteorListViewModelTests: XCTestCase {
     
     func testReversing() throws {
         let reversedResponse: [MeteorViewModel] = viewModel.meteorList!.reversed()
-        viewModel.reverseList()
+        viewModel.reverseList(isFavourite: false)
         XCTAssertEqual(reversedResponse, viewModel.meteorList!)
         
     }

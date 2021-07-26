@@ -118,18 +118,18 @@ class MeteorListViewController: UIViewController {
                     MBProgressHUD.showAdded(to: self.view, animated: true)
                 }
                 
-                self.viewModel?.sortByDate()
+                self.viewModel?.sortByDate(isFavourite: self.favouriteSwitch.isOn)
             }))
             
             alert.addAction(UIAlertAction(title: "Size", style: .default , handler:{ (UIAlertAction)in
                 print("User click size button")
                 MBProgressHUD.showAdded(to: self.view, animated: true)
-                self.viewModel?.sortBySize()
+                self.viewModel?.sortBySize(isFavourite: self.favouriteSwitch.isOn)
             }))
 
             alert.addAction(UIAlertAction(title: "Location", style: .default , handler:{ (UIAlertAction)in
                 MBProgressHUD.showAdded(to: self.view, animated: true)
-                self.viewModel?.sortByName()
+                self.viewModel?.sortByName(isFavourite: self.favouriteSwitch.isOn)
             }))
             
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
@@ -145,7 +145,7 @@ class MeteorListViewController: UIViewController {
             })
     }
     @IBAction func reverseAction(_ sender: Any) {
-        viewModel?.reverseList()
+        viewModel?.reverseList(isFavourite: self.favouriteSwitch.isOn)
     }
     @IBAction func favouritesSwitchAction(_ sender: UISwitch) {
         if sender.isOn {

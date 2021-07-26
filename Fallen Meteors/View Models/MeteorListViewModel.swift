@@ -73,24 +73,45 @@ class MeteorListViewModel {
                                                                                             
     }
     
-    func sortByDate() {
-        meteorList = meteorList!.sorted(by: {$0.year!.compare($1.year!) == .orderedAscending})
-        self.didFetchMeteorData?(meteorList, nil)
+    func sortByDate(isFavourite: Bool) {
+        if isFavourite {
+            favouriteMeteors = favouriteMeteors.sorted(by: {$0.year!.compare($1.year!) == .orderedAscending})
+            self.didFetchMeteorData?(favouriteMeteors, nil)
+        } else {
+            meteorList = meteorList!.sorted(by: {$0.year!.compare($1.year!) == .orderedAscending})
+            self.didFetchMeteorData?(meteorList, nil)
+        }
     }
     
-    func sortBySize() {
-        meteorList = meteorList!.sorted(by: {$0.mass ?? 0 < $1.mass ?? 0})
-        self.didFetchMeteorData?(meteorList, nil)
+    func sortBySize(isFavourite: Bool) {
+        if isFavourite {
+            favouriteMeteors = favouriteMeteors.sorted(by: {$0.mass ?? 0 < $1.mass ?? 0})
+            self.didFetchMeteorData?(favouriteMeteors, nil)
+        } else {
+            meteorList = meteorList!.sorted(by: {$0.mass ?? 0 < $1.mass ?? 0})
+            self.didFetchMeteorData?(meteorList, nil)
+        }
     }
     
-    func sortByName() {
-        meteorList = meteorList!.sorted(by: { $0.name! < $1.name!})
-        self.didFetchMeteorData?(meteorList, nil)
+    func sortByName(isFavourite: Bool) {
+        if isFavourite {
+            favouriteMeteors = favouriteMeteors.sorted(by: { $0.name! < $1.name!})
+            self.didFetchMeteorData?(favouriteMeteors, nil)
+        } else {
+            meteorList = meteorList!.sorted(by: { $0.name! < $1.name!})
+            self.didFetchMeteorData?(meteorList, nil)
+        }
+        
     }
     
-    func reverseList() {
-        meteorList = meteorList!.reversed()
-        self.didFetchMeteorData?(meteorList, nil)
+    func reverseList(isFavourite: Bool) {
+        if isFavourite {
+            favouriteMeteors = favouriteMeteors.reversed()
+            self.didFetchMeteorData?(favouriteMeteors, nil)
+        } else {
+            meteorList = meteorList!.reversed()
+            self.didFetchMeteorData?(meteorList, nil)
+        }
     }
     
     func refreshData() {
