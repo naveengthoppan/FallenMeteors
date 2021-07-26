@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		FE0F849726AD67BB001191C3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F849626AD67BB001191C3 /* CoreDataManager.swift */; };
 		FE0F849926AD6B27001191C3 /* MeteorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F849826AD6B27001191C3 /* MeteorViewModel.swift */; };
+		FE10540326AEC9010051B223 /* Fallen_MeteorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE10540226AEC9010051B223 /* Fallen_MeteorsTests.swift */; };
+		FE10540C26AEC9210051B223 /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = FE10540B26AEC9210051B223 /* response.json */; };
+		FE10540E26AEC99F0051B223 /* MeteorListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE10540D26AEC99F0051B223 /* MeteorListViewModelTests.swift */; };
+		FE10541226AF04270051B223 /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE10541126AF04270051B223 /* launch.jpg */; };
 		FE25A2A126A3158B00111D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE25A2A026A3158B00111D37 /* AppDelegate.swift */; };
 		FE25A2A326A3158B00111D37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE25A2A226A3158B00111D37 /* SceneDelegate.swift */; };
 		FE25A2A826A3158B00111D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE25A2A626A3158B00111D37 /* Main.storyboard */; };
@@ -23,14 +27,31 @@
 		FE298FB126A42C6B00C94D4E /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE298FB026A42C6B00C94D4E /* Meteor.swift */; };
 		FE50076B26A60A68001BC129 /* MeteorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50076A26A60A68001BC129 /* MeteorCell.swift */; };
 		FE50077126A8BB14001BC129 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50077026A8BB14001BC129 /* String+Extension.swift */; };
+		FE6CBE7B26AF17840068377B /* MeteorDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6CBE7A26AF17840068377B /* MeteorDetailViewModelTests.swift */; };
 		FEFB965026AC95AF00D49983 /* MeteorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB964F26AC95AF00D49983 /* MeteorDetailViewController.swift */; };
 		FEFB965226AC95FA00D49983 /* MeteorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB965126AC95FA00D49983 /* MeteorDetailViewModel.swift */; };
 		FEFB965626AD5C8D00D49983 /* MeteorData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEFB965426AD5C8D00D49983 /* MeteorData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FE10540526AEC9010051B223 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE25A29526A3158B00111D37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE25A29C26A3158B00111D37;
+			remoteInfo = "Fallen Meteors";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		FE0F849626AD67BB001191C3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FE0F849826AD6B27001191C3 /* MeteorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorViewModel.swift; sourceTree = "<group>"; };
+		FE10540026AEC9010051B223 /* Fallen MeteorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fallen MeteorsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE10540226AEC9010051B223 /* Fallen_MeteorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fallen_MeteorsTests.swift; sourceTree = "<group>"; };
+		FE10540426AEC9010051B223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE10540B26AEC9210051B223 /* response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = response.json; sourceTree = "<group>"; };
+		FE10540D26AEC99F0051B223 /* MeteorListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorListViewModelTests.swift; sourceTree = "<group>"; };
+		FE10541126AF04270051B223 /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
 		FE25A29D26A3158B00111D37 /* Fallen Meteors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fallen Meteors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE25A2A026A3158B00111D37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE25A2A226A3158B00111D37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,12 +67,20 @@
 		FE298FB026A42C6B00C94D4E /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
 		FE50076A26A60A68001BC129 /* MeteorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorCell.swift; sourceTree = "<group>"; };
 		FE50077026A8BB14001BC129 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "../../../../../String+Extension.swift"; sourceTree = "<group>"; };
+		FE6CBE7A26AF17840068377B /* MeteorDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorDetailViewModelTests.swift; sourceTree = "<group>"; };
 		FEFB964F26AC95AF00D49983 /* MeteorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorDetailViewController.swift; sourceTree = "<group>"; };
 		FEFB965126AC95FA00D49983 /* MeteorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeteorDetailViewModel.swift; path = ../../../../../MeteorDetailViewModel.swift; sourceTree = "<group>"; };
 		FEFB965526AD5C8D00D49983 /* MeteorData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeteorData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FE1053FD26AEC9010051B223 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FE25A29A26A3158B00111D37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,10 +92,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE10540126AEC9010051B223 /* Fallen MeteorsTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE10540A26AEC9170051B223 /* Stubs */,
+				FE10540226AEC9010051B223 /* Fallen_MeteorsTests.swift */,
+				FE10540426AEC9010051B223 /* Info.plist */,
+				FE10540D26AEC99F0051B223 /* MeteorListViewModelTests.swift */,
+				FE6CBE7A26AF17840068377B /* MeteorDetailViewModelTests.swift */,
+			);
+			path = "Fallen MeteorsTests";
+			sourceTree = "<group>";
+		};
+		FE10540A26AEC9170051B223 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				FE10540B26AEC9210051B223 /* response.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		FE25A29426A3158B00111D37 = {
 			isa = PBXGroup;
 			children = (
 				FE25A29F26A3158B00111D37 /* Fallen Meteors */,
+				FE10540126AEC9010051B223 /* Fallen MeteorsTests */,
 				FE25A29E26A3158B00111D37 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				FE25A29D26A3158B00111D37 /* Fallen Meteors.app */,
+				FE10540026AEC9010051B223 /* Fallen MeteorsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +179,7 @@
 		FE25A2B726A315ED00111D37 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FE10541126AF04270051B223 /* launch.jpg */,
 				FE25A2A926A3158C00111D37 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -204,6 +256,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FE1053FF26AEC9010051B223 /* Fallen MeteorsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE10540926AEC9010051B223 /* Build configuration list for PBXNativeTarget "Fallen MeteorsTests" */;
+			buildPhases = (
+				FE1053FC26AEC9010051B223 /* Sources */,
+				FE1053FD26AEC9010051B223 /* Frameworks */,
+				FE1053FE26AEC9010051B223 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE10540626AEC9010051B223 /* PBXTargetDependency */,
+			);
+			name = "Fallen MeteorsTests";
+			productName = "Fallen MeteorsTests";
+			productReference = FE10540026AEC9010051B223 /* Fallen MeteorsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FE25A29C26A3158B00111D37 /* Fallen Meteors */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE25A2B126A3158C00111D37 /* Build configuration list for PBXNativeTarget "Fallen Meteors" */;
@@ -233,6 +303,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					FE1053FF26AEC9010051B223 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = FE25A29C26A3158B00111D37;
+					};
 					FE25A29C26A3158B00111D37 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -255,15 +329,25 @@
 			projectRoot = "";
 			targets = (
 				FE25A29C26A3158B00111D37 /* Fallen Meteors */,
+				FE1053FF26AEC9010051B223 /* Fallen MeteorsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FE1053FE26AEC9010051B223 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE10540C26AEC9210051B223 /* response.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FE25A29B26A3158B00111D37 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE10541226AF04270051B223 /* launch.jpg in Resources */,
 				FE25A2AD26A3158C00111D37 /* LaunchScreen.storyboard in Resources */,
 				FE25A2AA26A3158C00111D37 /* Assets.xcassets in Resources */,
 				FE25A2A826A3158B00111D37 /* Main.storyboard in Resources */,
@@ -273,6 +357,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FE1053FC26AEC9010051B223 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE10540E26AEC99F0051B223 /* MeteorListViewModelTests.swift in Sources */,
+				FE10540326AEC9010051B223 /* Fallen_MeteorsTests.swift in Sources */,
+				FE6CBE7B26AF17840068377B /* MeteorDetailViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FE25A29926A3158B00111D37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,6 +391,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FE10540626AEC9010051B223 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE25A29C26A3158B00111D37 /* Fallen Meteors */;
+			targetProxy = FE10540526AEC9010051B223 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		FE25A2A626A3158B00111D37 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -317,6 +419,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FE10540726AEC9010051B223 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3KQ63J72GA;
+				INFOPLIST_FILE = "Fallen MeteorsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thoppan.Fallen-MeteorsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fallen Meteors.app/Fallen Meteors";
+			};
+			name = Debug;
+		};
+		FE10540826AEC9010051B223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3KQ63J72GA;
+				INFOPLIST_FILE = "Fallen MeteorsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thoppan.Fallen-MeteorsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fallen Meteors.app/Fallen Meteors";
+			};
+			name = Release;
+		};
 		FE25A2AF26A3158C00111D37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -438,8 +580,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3KQ63J72GA;
+				DEVELOPMENT_TEAM = 6TAXK587Y7;
 				INFOPLIST_FILE = "$(SRCROOT)/Fallen Meteors/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,8 +590,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thoppan.Fallen-Meteors";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -457,8 +601,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3KQ63J72GA;
+				DEVELOPMENT_TEAM = 6TAXK587Y7;
 				INFOPLIST_FILE = "$(SRCROOT)/Fallen Meteors/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -466,14 +611,24 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thoppan.Fallen-Meteors";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FE10540926AEC9010051B223 /* Build configuration list for PBXNativeTarget "Fallen MeteorsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE10540726AEC9010051B223 /* Debug */,
+				FE10540826AEC9010051B223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FE25A29826A3158B00111D37 /* Build configuration list for PBXProject "Fallen Meteors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

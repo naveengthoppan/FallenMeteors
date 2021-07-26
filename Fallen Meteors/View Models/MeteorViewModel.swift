@@ -7,7 +7,11 @@
 
 import Foundation
 
-class MeteorViewModel {
+class MeteorViewModel: Equatable {
+    static func == (lhs: MeteorViewModel, rhs: MeteorViewModel) -> Bool {
+        return lhs.id == rhs.id && lhs.name == rhs.name
+    }
+    
     var id: String?
     var name: String?
     var recclass: String?
