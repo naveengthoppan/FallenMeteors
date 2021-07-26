@@ -121,7 +121,7 @@ final class CoreDataManager {
         let fetchRequest = NSFetchRequest<MeteorData>(entityName: "MeteorData")
 
         // Add Predicate
-        let predicate = NSPredicate(format: "name == %@ AND id == %@", meteor.name!, meteor.id as! CVarArg)
+        let predicate = NSPredicate(format: "name == %@ AND id == %@", meteor.name!, meteor.id!)
         fetchRequest.predicate = predicate
 
         do {

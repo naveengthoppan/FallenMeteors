@@ -20,17 +20,17 @@
 		FE25A2AD26A3158C00111D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE25A2AB26A3158C00111D37 /* LaunchScreen.storyboard */; };
 		FE25A2BA26A3173800111D37 /* MeteorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE25A2B926A3173800111D37 /* MeteorListViewController.swift */; };
 		FE26813D26A9F53B00439D0F /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = FE26813C26A9F53B00439D0F /* MBProgressHUD */; };
-		FE26813F26AAE3B500439D0F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26813E26AAE3B500439D0F /* Date+Extension.swift */; };
 		FE298FA826A4234200C94D4E /* MeteorRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE298FA726A4234200C94D4E /* MeteorRequest.swift */; };
 		FE298FAB26A426B500C94D4E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE298FAA26A426B500C94D4E /* Configuration.swift */; };
 		FE298FAE26A4286800C94D4E /* MeteorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE298FAD26A4286800C94D4E /* MeteorListViewModel.swift */; };
 		FE298FB126A42C6B00C94D4E /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE298FB026A42C6B00C94D4E /* Meteor.swift */; };
 		FE50076B26A60A68001BC129 /* MeteorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50076A26A60A68001BC129 /* MeteorCell.swift */; };
-		FE50077126A8BB14001BC129 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE50077026A8BB14001BC129 /* String+Extension.swift */; };
 		FE6CBE7B26AF17840068377B /* MeteorDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6CBE7A26AF17840068377B /* MeteorDetailViewModelTests.swift */; };
 		FE6CBE8426AF32BB0068377B /* MeteorData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE6CBE8226AF32BB0068377B /* MeteorData.xcdatamodeld */; };
+		FE6CBE8726AF34980068377B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6CBE8526AF34980068377B /* String+Extension.swift */; };
+		FE6CBE8826AF34980068377B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6CBE8626AF34980068377B /* Date+Extension.swift */; };
+		FE6CBE8A26AF34B40068377B /* MeteorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6CBE8926AF34B40068377B /* MeteorDetailViewModel.swift */; };
 		FEFB965026AC95AF00D49983 /* MeteorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB964F26AC95AF00D49983 /* MeteorDetailViewController.swift */; };
-		FEFB965226AC95FA00D49983 /* MeteorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB965126AC95FA00D49983 /* MeteorDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,17 +60,17 @@
 		FE25A2AC26A3158C00111D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE25A2AE26A3158C00111D37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE25A2B926A3173800111D37 /* MeteorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorListViewController.swift; sourceTree = "<group>"; };
-		FE26813E26AAE3B500439D0F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+Extension.swift"; path = "../../../../../Date+Extension.swift"; sourceTree = "<group>"; };
 		FE298FA726A4234200C94D4E /* MeteorRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorRequest.swift; sourceTree = "<group>"; };
 		FE298FAA26A426B500C94D4E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		FE298FAD26A4286800C94D4E /* MeteorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorListViewModel.swift; sourceTree = "<group>"; };
 		FE298FB026A42C6B00C94D4E /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
 		FE50076A26A60A68001BC129 /* MeteorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorCell.swift; sourceTree = "<group>"; };
-		FE50077026A8BB14001BC129 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "../../../../../String+Extension.swift"; sourceTree = "<group>"; };
 		FE6CBE7A26AF17840068377B /* MeteorDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorDetailViewModelTests.swift; sourceTree = "<group>"; };
 		FE6CBE8326AF32BB0068377B /* MeteorData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeteorData.xcdatamodel; sourceTree = "<group>"; };
+		FE6CBE8526AF34980068377B /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		FE6CBE8626AF34980068377B /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		FE6CBE8926AF34B40068377B /* MeteorDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteorDetailViewModel.swift; sourceTree = "<group>"; };
 		FEFB964F26AC95AF00D49983 /* MeteorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorDetailViewController.swift; sourceTree = "<group>"; };
-		FEFB965126AC95FA00D49983 /* MeteorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MeteorDetailViewModel.swift; path = ../../../../../MeteorDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,8 +212,8 @@
 		FE298FAC26A4284D00C94D4E /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				FE6CBE8926AF34B40068377B /* MeteorDetailViewModel.swift */,
 				FE298FAD26A4286800C94D4E /* MeteorListViewModel.swift */,
-				FEFB965126AC95FA00D49983 /* MeteorDetailViewModel.swift */,
 				FE0F849826AD6B27001191C3 /* MeteorViewModel.swift */,
 			);
 			path = "View Models";
@@ -238,8 +238,8 @@
 		FE50076F26A8BAF6001BC129 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FE50077026A8BB14001BC129 /* String+Extension.swift */,
-				FE26813E26AAE3B500439D0F /* Date+Extension.swift */,
+				FE6CBE8626AF34980068377B /* Date+Extension.swift */,
+				FE6CBE8526AF34980068377B /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -371,15 +371,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE6CBE8726AF34980068377B /* String+Extension.swift in Sources */,
 				FE298FAE26A4286800C94D4E /* MeteorListViewModel.swift in Sources */,
-				FEFB965226AC95FA00D49983 /* MeteorDetailViewModel.swift in Sources */,
-				FE50077126A8BB14001BC129 /* String+Extension.swift in Sources */,
 				FE298FB126A42C6B00C94D4E /* Meteor.swift in Sources */,
 				FE25A2BA26A3173800111D37 /* MeteorListViewController.swift in Sources */,
 				FE298FAB26A426B500C94D4E /* Configuration.swift in Sources */,
 				FEFB965026AC95AF00D49983 /* MeteorDetailViewController.swift in Sources */,
 				FE6CBE8426AF32BB0068377B /* MeteorData.xcdatamodeld in Sources */,
-				FE26813F26AAE3B500439D0F /* Date+Extension.swift in Sources */,
+				FE6CBE8A26AF34B40068377B /* MeteorDetailViewModel.swift in Sources */,
+				FE6CBE8826AF34980068377B /* Date+Extension.swift in Sources */,
 				FE25A2A126A3158B00111D37 /* AppDelegate.swift in Sources */,
 				FE0F849926AD6B27001191C3 /* MeteorViewModel.swift in Sources */,
 				FE25A2A326A3158B00111D37 /* SceneDelegate.swift in Sources */,
